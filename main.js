@@ -12,11 +12,15 @@ const numberMappings = {
 }
 
 let myargs = process.argv.slice(2)
-// console.log('my args: ',myargs)
+let wordRepresentationsOfNumbers = ""
 myargs.forEach(element => {
-    let stringnum = ""
+    let wordRepresentationsOfANumber = ""
     for(let i=0;i<element.length;i++){
-        stringnum += numberMappings[element[i]]
+        wordRepresentationsOfANumber += numberMappings[element[i]]
     }
-    console.log(stringnum)
+    wordRepresentationsOfNumbers += wordRepresentationsOfANumber  + ","
 });
+
+wordRepresentationsOfNumbers = wordRepresentationsOfNumbers.slice(0,-1)
+console.log(wordRepresentationsOfNumbers)
+
